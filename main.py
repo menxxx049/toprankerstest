@@ -397,7 +397,7 @@ async def account_login(bot: Client, m: Message):
         arg = 0
     
     
-    editable = await m.reply_text(f"**Copy Paste the App Name of which you want to download videos.**\n\n`anytimelearningtopranker`\n\n`anytimelearningmaster`")
+    editable = await m.reply_text(f"**Copy Paste the App Name of which you want to download videos.**\n\n`anytimelearningtopranker`\n\n`anytimelearningmaster`\n\n`englishmantraonline`")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text0 = input0.text
     
@@ -448,6 +448,15 @@ async def account_login(bot: Client, m: Message):
                 y= url.replace("/", "%2F")
 #                 rout = f"https://live.anytimelearning.in/?route=common/ajax&mod=liveclasses&ack=getcustompolicysignedcookiecdn&stream=https%3A%2F%2Fvodcdn.anytimelearning.in%2Flivehttporigin%2F{y[56:-14]}%2Fmaster.m3u8"
                 rout =f"https://live.anytimelearning.in/?route=common/ajax&mod=liveclasses&ack=getcustompolicysignedcookiecdn&stream=https%3A%2F%2Fvodcdn.anytimelearning.in%2{y[39:-14]}%2Fmaster.m3u8"
+                getstatusoutput(f'curl "{rout}" -c "cookie.txt"')
+                cook = "cookie.txt"
+                # print (rout)
+                # print(url)
+            if raw_text0 in "englishmantraonline" :
+
+                y= url.replace("/", "%2F")
+#                 rout = f"https://www.englishmantraonline.com/?route=common/ajax&mod=liveclasses&ack=getcustompolicysignedcookiecdn&stream=https%3A%2F%2Fvodcdn.englishmantraonline.com%2Flivehttporigin%2F{y[56:-14]}%2Fmaster.m3u8"
+                rout =f"https://www.englishmantraonline.com/?route=common/ajax&mod=liveclasses&ack=getcustompolicysignedcookiecdn&stream=https%3A%2F%2Fvodcdn.englishmantraonline.com%2{y[56:-14]}%2Fmaster.m3u8"
                 getstatusoutput(f'curl "{rout}" -c "cookie.txt"')
                 cook = "cookie.txt"
                 # print (rout)
